@@ -32,7 +32,6 @@ export class Conta {
         }
     }
 
-
     sacar(valor) {
         if (valor > 0 && valor <= this.#saldo) {
             this.#saldo -= valor;
@@ -57,10 +56,9 @@ export class Conta {
         return false;
     }
 
-
     toString() {
-        return ("Nº Conta= " + this.#id +
-            "/nTitular= " + this.#titular.toString() +
-            "/nSaldo= " + this.#saldo.toFixed(2));
+        return ("Nº Conta = " + this.#id +
+            "\nTitular = " + this.#titular.toString() +
+            "\nSaldo= " + this.#saldo.toFixed(2));
     }
 }
