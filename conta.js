@@ -31,35 +31,36 @@ export class Conta {
             return null;
         }
     }
-}
 
-sacar(valor){
-    if (valor > 0 && valor <= this.#saldo) {
-        this.#saldo -= valor;
-        return true;
+
+    sacar(valor) {
+        if (valor > 0 && valor <= this.#saldo) {
+            this.#saldo -= valor;
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 
-depositar(valor){
-    if (valor > 0.00) {
-        this.#saldo += valor;
-        return true;
+    depositar(valor) {
+        if (valor > 0.00) {
+            this.#saldo += valor;
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 
-transferir(valor, contaDestino){ 
-    if (contaDestino instanceof Conta && this.sacar(valor)) {
-        contaDestino.depositar(valor);
-        return true;
+    transferir(valor, contaDestino) {
+        if (contaDestino instanceof Conta && this.sacar(valor)) {
+            contaDestino.depositar(valor);
+            return true;
+        }
+        return false;
     }
-    return false;
-}
 
 
-toString(){
-    return ("Nº Conta= "+ this.#id+
-        "/nTitular= " + this.#titular.toString()+
-        "/nSaldo= " + this.#saldo.toFixed(2));
+    toString() {
+        return ("Nº Conta= " + this.#id +
+            "/nTitular= " + this.#titular.toString() +
+            "/nSaldo= " + this.#saldo.toFixed(2));
     }
+}
