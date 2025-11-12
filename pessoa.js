@@ -20,7 +20,7 @@ export class Pessoa {
         if (novoNome.length < 2) {
             console.log("Nome deve ter pelo menos 3 caracteres.");
         } else {
-            this.#nome = novoNome.toUpperCase();
+            return this.#nome = novoNome.toUpperCase();
         }
     }
 
@@ -48,13 +48,31 @@ export class Pessoa {
 }
 
 export class Funcionario extends Pessoa {
+    static #quantidadeFunc = 0;
     #matricula;
     #salario;
 
-    constructor(matricula, nome, cpf, dtNasc, salario = 0.0) {
+    constructor(nome, cpf, dtNasc, matricula, salario = 0.0) {
         super(nome, cpf, dtNasc);
-        this.#matricula = matricula;
+        Funcionario.#quantidadeFunc++;
+        this.#matricula = "" + new Date().getFullYear()+ "Func" + Funcionario.quantidadeFunc;
         this.#salario = salario;
+    }
+
+    static get quantidadeFunc() {
+        return Funcionario.#quantidadeFunc;
+    }
+
+    set salario(salario) {
+        if (salario > 0.0) {
+            this.#salario = salario;
+        }
+
+        return salario;
+    }
+
+    get matricula() {
+        return this.#matricula;
     }
 
     toString() {

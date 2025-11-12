@@ -1,13 +1,14 @@
+import { Pessoa } from "./pessoa";
 import { Conta } from "./conta";
 
 export class Poupanca extends Conta {
     #rendimento;
 
-    constructor(cliente, saldo = 0.0, rendimento = 0.0){
+    constructor(cliente, saldo = 0.0, rendimento = 0.0) {
         super(cliente, saldo);
         this.#rendimento = rendimento;
     }
-    get rendimento(){
+    get rendimento() {
         this.#rendimento;
     }
 
@@ -19,9 +20,16 @@ export class Poupanca extends Conta {
         }
     }
 
-    viraMes(){
-        var rendeu = super.saldo * (this.#rendimento/100);
+    viraMes() {
+        var rendeu = super.saldo * (this.#rendimento / 100);
         super.depositar(rendeu);
         return rendeu;
+    }
+
+    toString() {
+        return ("Poupança:\n" +
+            super.toString() +
+            "\nSaldo = R$" + super.saldo.toFixed(2) +
+            "\nRendimento = " + this.#rendimento.toFixed(1) + "%");
     }
 }
