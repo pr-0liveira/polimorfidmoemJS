@@ -1,4 +1,3 @@
-import { Pessoa } from "./pessoa";
 import { Conta } from "./conta";
 
 export class Poupanca extends Conta {
