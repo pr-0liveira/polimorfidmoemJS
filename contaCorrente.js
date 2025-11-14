@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 import Conta from "conta.js";
-=======
 import { Conta } from "./pessoa.js";
 
 export class ContaCorrente extends Conta {
@@ -108,4 +106,3 @@ export class ContaCorrente extends Conta {
         }
     }
 }
->>>>>>> pedro
