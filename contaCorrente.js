@@ -1,5 +1,4 @@
-import Conta from "conta.js";
-import { Conta } from "./pessoa.js";
+import { Conta } from "./conta.js";
 
 export class ContaCorrente extends Conta {
     #tarifa;
@@ -8,7 +7,7 @@ export class ContaCorrente extends Conta {
     #saldoDevedor;
 
     constructor(titular, saldo = 0, tarifa = 0, limiteCredito = 0, juros = 0, saldoDevedor = 0) {
-        super(saldo, titular);
+        super(titular, saldo);
         this.#tarifa = tarifa;
         this.#limiteCredito = limiteCredito;
         this.#juros = juros;
@@ -65,15 +64,15 @@ export class ContaCorrente extends Conta {
 
 
     get saldo() {
-        return super.saldo + this.#limiteCredito;
+        return super.saldo - this.#saldoDevedor;
     }
 
     limiteDisponivel() {
-        return super.saldo + this.#limiteCredito;
+        return (super.saldo + this.#limiteCredito - this.#saldoDevedor);
     }
 
     sacar(valor) {
-        if (valor < super.saldo + this.#limiteCredito) {
+        if (valor <= 0 && valor < super.saldo + this.#limiteCredito) {
             if (valor <= super.saldo) {
                 return super.sacar(valor);
             } else {
@@ -90,7 +89,7 @@ export class ContaCorrente extends Conta {
         if (this.#saldoDevedor > 0) {
             this.#saldoDevedor *= this.#juros;
         } else if (super.saldo > 0) {
-            super.saldo -= this.#tarifa;
+            super.sacar(super.saldo) -= this.#tarifa;
         }
     }
 
