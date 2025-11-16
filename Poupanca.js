@@ -1,4 +1,4 @@
-import { Conta } from "./conta";
+import { Conta } from "./conta.js";
 
 export class Poupanca extends Conta {
     #rendimento;
@@ -8,7 +8,7 @@ export class Poupanca extends Conta {
         this.#rendimento = rendimento;
     }
     get rendimento() {
-        this.#rendimento;
+        return this.#rendimento;
     }
 
     set rendimento(valor) {
