@@ -24,7 +24,7 @@ export class Conta {
         return this.#titular;
     }
     set titular(cliente) {
-        if (cliente != undefined && cliente instanceof Pessoa) {
+        if (cliente != undefined) {
             this.#titular = cliente;
             return cliente;
         } else {
@@ -60,7 +60,7 @@ export class Conta {
 
     toString() {
         return ("Nº Conta= " + this.#id +
-            "/n" + "Titular= " + this.#titular.toString() +
-            "/n" + "Saldo= " + this.#saldo.toFixed(2));
+            "\n" + "Titular= " + this.#titular.toString() +
+            "\n" + "Saldo= " + this.#saldo.toFixed(2));
     }
 }
