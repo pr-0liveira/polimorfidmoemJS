@@ -1,5 +1,3 @@
-import { Pessoa } from "./pessoa.js";
-
 export class Conta {
     static #qtdContas = 0;
     #id;
