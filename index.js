@@ -5,28 +5,43 @@ import { Poupanca } from "./Poupanca.js";
 
 const cliente1 = new Pessoa("Zico", "11122233344", "1984/09/07");
 const cliente2 = new Pessoa("Diego", "99988877766", "1990/04/10");
+const cliente3 = new Pessoa("Arrascaeta", "12312312312", "1998/05/01");
 //const funcio1 = new Funcionario("Archimedes","11222333255","1970/05/05",  "1900.00");
 //const funcio2 = new Funcionario("Jarbas","6666666669","1924", "900.0" );
-const contaCorre1 = new ContaCorrente("Pedro", 200, 0, 5000, 5, 0);
+//const contaCorre1 = new ContaCorrente("Pedro", 200, 0, 5000, 5, 0);
 
 console.log("Quantidade Contas do Banco = " + Conta.qtdContas);
 
-const conta1 = new Conta(cliente1);
-const conta2 = new Conta(cliente2);
+const conta1 = new Conta(cliente1, 1000.00);
+const conta2 = new ContaCorrente(cliente2, 500.00, 2.50, 1000.00, 10.0, 0.0);
+const conta3 = new Poupanca(cliente3, 1500.00, 1.5);
 
 console.log("\nQuantidade Contas do Banco = " + Conta.qtdContas);
-console.log("\n" + conta1);
-console.log("\n" + conta2);
 //console.log("\n" + funcio1);
 //console.log("\n" + funcio2);
-console.log("\n" + contaCorre1);
+//console.log("\n" + contaCorre1);
+
+var vetContas = [
+    conta1,
+    conta2,
+    conta3
+];
 
 
-conta2.depositar(500.00);
+//conta2.depositar(500.00);
 
-let valorTransf = 250.00;
+//let valorTransf = 250.00;
 
-
-conta1.transferir(valorTransf, conta2);
+//conta1.transferir(valorTransf, conta2);
 console.log("\n" + conta1.toString());
-console.log("\n" + conta2.toString());
+console.log("\n" + vetContas[1].toString());
+console.log("\n" + vetContas[2].toString());
+
+vetContas[1].viraMes();
+vetContas[2].viraMes();
+
+console.log("\nApós o Vira Mês:");
+console.log("\n" + vetContas[0].toString());
+console.log("\n" + vetContas[1].toString());
+console.log("\n" + vetContas[2].toString());
+

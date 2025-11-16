@@ -28,7 +28,6 @@ export class Poupanca extends Conta {
     toString() {
         return ("Poupança:\n" +
             super.toString() +
-            "\nSaldo = R$" + super.saldo.toFixed(2) +
             "\nRendimento = " + this.#rendimento.toFixed(1) + "%");
     }
 }
