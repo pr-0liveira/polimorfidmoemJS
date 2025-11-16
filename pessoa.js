@@ -48,7 +48,6 @@ export class Pessoa {
 }
 
 
-import { Pessoa } from "./pessoa.js/";
 export class Funcionario extends Pessoa {
     #matricula;
     #salario;

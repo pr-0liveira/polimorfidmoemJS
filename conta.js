@@ -60,7 +60,7 @@ export class Conta {
 
     toString() {
         return ("Nº Conta= " + this.#id +
-            "/nTitular= " + this.#titular.toString() +
-            "/nSaldo= " + this.#saldo.toFixed(2));
+            "/n" + "Titular= " + this.#titular.toString() +
+            "/n" + "Saldo= " + this.#saldo.toFixed(2));
     }
 }
