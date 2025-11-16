@@ -1,6 +1,7 @@
 import { Pessoa } from "./pessoa.js";
 import { ContaCorrente } from "./contaCorrente.js";
 import { Conta } from "./conta.js";
+import { Poupanca } from "./Poupanca.js";
 
 const cliente1 = new Pessoa("Zico", "11122233344", "1984/09/07");
 const cliente2 = new Pessoa("Diego", "99988877766", "1990/04/10");
