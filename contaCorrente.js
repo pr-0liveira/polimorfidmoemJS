@@ -20,9 +20,9 @@ export class ContaCorrente extends Conta {
 
     set tarifa(valor) {
         if (valor < 0) {
-            this.#tarifa = 0
+            this.#tarifa = 0;
         } else {
-            this.#tarifa = valor
+            this.#tarifa = valor;
         }
     }
 
@@ -32,9 +32,9 @@ export class ContaCorrente extends Conta {
 
     set limiteCredito(valor) {
         if (valor > 200) {
-            this.#limiteCredito = valor
+            this.#limiteCredito = valor;
         } else {
-            this.#limiteCredito = 200
+            this.#limiteCredito = 200;
         }
     }
 
@@ -45,9 +45,9 @@ export class ContaCorrente extends Conta {
 
     set juros(valor) {
         if (valor <= 0) {
-            this.#juros = 0
+            this.#juros = 0;
         } else {
-            this.#juros = valor
+            this.#juros = valor;
         }
     }
     get saldoDevedor() {
@@ -56,9 +56,9 @@ export class ContaCorrente extends Conta {
 
     set saldoDevedor(valor) {
         if (valor < 0) {
-            this.#saldoDevedor = 0
+            this.#saldoDevedor = 0;
         } else {
-            this.#saldoDevedor = valor
+            this.#saldoDevedor = valor;
         }
     }
 
@@ -105,7 +105,7 @@ export class ContaCorrente extends Conta {
                super.depositar(valor); 
             }
         }else{
-            return false
+            return false;
         }
     }
 }
