@@ -45,3 +45,5 @@ console.log("\n" + vetContas[0].toString());
 console.log("\n" + vetContas[1].toString());
 console.log("\n" + vetContas[2].toString());
 
+console.log(+ conta1.sacar(200.00));
+console.log("\n" + conta1.toString());
