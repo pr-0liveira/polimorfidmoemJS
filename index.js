@@ -13,7 +13,7 @@ const cliente3 = new Pessoa("Arrascaeta", "12312312312", "1998/05/01");
 console.log("Quantidade Contas do Banco = " + Conta.qtdContas);
 
 const conta1 = new Conta(cliente1, 1000.00);
-const conta2 = new ContaCorrente(cliente2, 500.00, 2.50, 1000.00, 10.0, 0.0);
+const conta2 = new ContaCorrente(cliente2, 500.00, 2.50, 1000.00, 10.0, 100.0);
 const conta3 = new Poupanca(cliente3, 1500.00, 1.5);
 
 console.log("\nQuantidade Contas do Banco = " + Conta.qtdContas);
@@ -45,5 +45,5 @@ console.log("\n" + vetContas[0].toString());
 console.log("\n" + vetContas[1].toString());
 console.log("\n" + vetContas[2].toString());
 
-console.log(+ conta1.sacar(200.00));
+conta1.sacar(200.00);
 console.log("\n" + conta1.toString());
